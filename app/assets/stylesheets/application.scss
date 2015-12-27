@@ -16,9 +16,30 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$grey-light: #C3C6CE;
+$grey-input: #435257;
+$blue-primary: #1CA8DD;
+$blue-dark: #1A1C22;
+$green-blue: #0E485E;
+$white-darker: #FAFEFF;
+$blue-darker: #252830;
+$white-text: #CDD0D8;
+$red: #E64759;
+
 body {
-  background-color: #252830;
+  background-color: $blue-darker;
+  color: $white-text;
+}
+
+h1, h2, h3, h4, h5, h6 {
   color: white;
+}
+
+a {
+  color: $blue-primary;
+  &:hover {
+    color: $green-blue;
+  }
 }
 
 .nav-container {
@@ -28,5 +49,51 @@ body {
 
 .navbar-dark {
   @extend .navbar-inverse;
-  background-color: #1A1C22;
+  background-color: $blue-dark;
+}
+
+.alert-danger {
+  background-color: $red;
+  color: white;
+}
+
+.control-label {
+  color: $grey-light;
+}
+
+.form-control {
+  background-color: $grey-input;
+  color: white;
+  border: 0;
+  &:focus, &:active {
+    background-color: white;
+    color: black;
+  }
+}
+.form-control input[type="submit"] {
+  background-color: $blue-primary;
+  color: white;
+  &:hover {
+    background-color: $green-blue;
+    color: $white-darker;
+  }
+}
+
+.has-error {
+  color: $red;
+  input {
+    border: 1px solid $red;
+  }
+}
+
+
+.auth-heading {
+  text-align: center;
+  padding: 50px 0 20px 0;
+}
+
+.auth-form {
+  padding: 20px;
+  border: 1px solid $grey-light;
+  border-radius: 5px;
 }

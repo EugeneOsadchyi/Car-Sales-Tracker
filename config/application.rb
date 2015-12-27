@@ -34,6 +34,10 @@ module Cars
 
     config.action_mailer.default_url_options = { host: Settings.host, port: Settings.port }
 
+    config.to_prepare do
+      Devise::SessionsController.layout proc{ |controller| action_name == 'new' ? "devise"   : "application" }
+    end
+
     config.generators do |g|
       g.fixture_replacement :factory_girl
       g.factory_girl dir: 'spec/factories'

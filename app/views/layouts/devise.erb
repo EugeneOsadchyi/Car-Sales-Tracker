@@ -13,12 +13,16 @@
 <body>
   <%= render 'layouts/header' %>
   <div class="container">
-    <%= yield :heading %>
+    <div class="row">
+      <div class="col-lg-offset-4 col-lg-4">
+        <%= yield :heading %>
 
-    <%= flash_messages(yield :classes) %>
+        <%= flash_messages(yield :classes) %>
 
-    <%= yield %>
+        <%= yield %>
+      </div>
+    </div>
   </div>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
