@@ -1,0 +1,91 @@
+$grey-light: #C3C6CE;
+$grey-input: #435257;
+$blue-dark: #1A1C22;
+$green-blue: #0E485E;
+$white-darker: #FAFEFF;
+$blue-darker: #252830;
+$white-text: #CDD0D8;
+
+$blue: #1CA8DD;
+$red: #E64759;
+$yellow: #E4D836;
+$green: #19B882;
+$purple: #9F86FF;
+
+body {
+  background-color: $blue-darker;
+  color: $white-text;
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+}
+
+a {
+  color: $blue;
+  &:hover {
+    color: $green-blue;
+  }
+}
+
+.nav-container {
+  @extend .container-fluid;
+  padding: 0 60px;
+}
+
+.navbar-dark {
+  @extend .navbar-inverse;
+  background-color: $blue-dark;
+}
+
+.alert {
+  border: 0;
+  color: white;
+}
+
+.alert-info {
+  background-color: $purple;
+}
+
+.alert-success {
+  background-color: $green;
+}
+
+.alert-warning {
+  background-color: $yellow;
+}
+
+.alert-danger {
+  background-color: $red;
+}
+
+.control-label {
+  color: $grey-light;
+}
+
+.form-control {
+  background-color: $grey-input;
+  color: white;
+  border: 0;
+  &:focus, &:active {
+    background-color: white;
+    color: black;
+  }
+}
+.form-control input[type="submit"] {
+  background-color: $blue;
+  color: white;
+  &:hover {
+    background-color: $green-blue;
+    color: $white-darker;
+  }
+}
+
+.has-error {
+  color: $red;
+  input {
+    border: 1px solid $red;
+  }
+}
