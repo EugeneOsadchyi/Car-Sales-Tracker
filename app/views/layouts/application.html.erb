@@ -12,8 +12,11 @@
 </head>
 <body role="document">
   <%= render 'layouts/header' %>
+
   <div class="container" role="main">
-    <%= yield :heading %>
+    <div class="page-geader">
+      <%= yield :heading %>
+    </div>
 
     <%= flash_messages(yield :classes) %>
 
