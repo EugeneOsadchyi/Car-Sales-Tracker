@@ -17,9 +17,6 @@
 #  updated_at             :datetime         not null
 #  first_name             :string           not null
 #  last_name              :string           default(""), not null
-#  about                  :string
-#  date_of_birth          :datetime
-#  location               :string
 #  phone                  :string(30)
 #  locale                 :string           default("en"), not null
 #

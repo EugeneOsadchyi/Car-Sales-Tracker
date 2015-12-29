@@ -144,9 +144,6 @@ ActiveRecord::Schema.define(version: 20151228151955) do
     t.datetime "updated_at",                                       null: false
     t.string   "first_name",                                       null: false
     t.string   "last_name",                         default: "",   null: false
-    t.string   "about"
-    t.datetime "date_of_birth"
-    t.string   "location"
     t.string   "phone",                  limit: 30
     t.string   "locale",                            default: "en", null: false
   end

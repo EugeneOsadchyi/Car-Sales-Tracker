@@ -10,4 +10,6 @@
 
 class Location < ActiveRecord::Base
   belongs_to :car
+
+  validates :city, presence: true
 end

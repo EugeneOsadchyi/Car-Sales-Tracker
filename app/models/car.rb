@@ -25,4 +25,8 @@
 #
 
 class Car < ActiveRecord::Base
+  validates :mileage, presence: true, numericality: { only_integer: true }
+  validates :price, presence: true, numericality: { only_integer: true }
+  validates :year, presence: true, numericality: { only_integer: true }
+  validates :url, presence: true
 end
