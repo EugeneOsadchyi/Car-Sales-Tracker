@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: transmissions
+#
+#  id         :integer          not null, primary key
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'rails_helper'
 
 RSpec.describe Transmission, type: :model do
