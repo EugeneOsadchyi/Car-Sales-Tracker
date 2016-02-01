@@ -32,7 +32,9 @@ a {
 
 .nav-container {
   @extend .container-fluid;
-  padding: 0 60px;
+  @media (min-width: $screen-md-min) {
+    padding: 0 60px;
+  }
 }
 
 .navbar-dark {
@@ -74,6 +76,7 @@ a {
     color: black;
   }
 }
+
 .form-control input[type="submit"] {
   background-color: $blue;
   color: white;
