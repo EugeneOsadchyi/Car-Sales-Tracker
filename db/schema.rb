@@ -25,13 +25,12 @@ ActiveRecord::Schema.define(version: 20151228151955) do
   create_table "cars", force: :cascade do |t|
     t.integer  "mileage",              default: 0,   null: false
     t.decimal  "price",                default: 0.0, null: false
-    t.integer  "year",                               null: false
+    t.integer  "year"
     t.string   "url",                  default: "",  null: false
     t.datetime "date_added"
-    t.integer  "make_id",                            null: false
+    t.integer  "model_id",                           null: false
     t.integer  "transmission_id",                    null: false
     t.integer  "condition_id",                       null: false
-    t.integer  "description_id"
     t.integer  "drive_train_id",                     null: false
     t.integer  "body_style_id",                      null: false
     t.integer  "color_id",                           null: false
@@ -48,12 +47,11 @@ ActiveRecord::Schema.define(version: 20151228151955) do
   add_index "cars", ["color_id"], name: "index_cars_on_color_id", using: :btree
   add_index "cars", ["condition_id"], name: "index_cars_on_condition_id", using: :btree
   add_index "cars", ["currency_id"], name: "index_cars_on_currency_id", using: :btree
-  add_index "cars", ["description_id"], name: "index_cars_on_description_id", using: :btree
   add_index "cars", ["drive_train_id"], name: "index_cars_on_drive_train_id", using: :btree
   add_index "cars", ["fuel_id"], name: "index_cars_on_fuel_id", using: :btree
   add_index "cars", ["location_id"], name: "index_cars_on_location_id", using: :btree
-  add_index "cars", ["make_id"], name: "index_cars_on_make_id", using: :btree
   add_index "cars", ["mileage_dimension_id"], name: "index_cars_on_mileage_dimension_id", using: :btree
+  add_index "cars", ["model_id"], name: "index_cars_on_model_id", using: :btree
   add_index "cars", ["registration_id"], name: "index_cars_on_registration_id", using: :btree
   add_index "cars", ["transmission_id"], name: "index_cars_on_transmission_id", using: :btree
 
@@ -77,9 +75,12 @@ ActiveRecord::Schema.define(version: 20151228151955) do
 
   create_table "descriptions", force: :cascade do |t|
     t.text     "content",    null: false
+    t.integer  "car_id",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "descriptions", ["car_id"], name: "index_descriptions_on_car_id", using: :btree
 
   create_table "drive_trains", force: :cascade do |t|
     t.string   "name",       null: false
@@ -113,9 +114,12 @@ ActiveRecord::Schema.define(version: 20151228151955) do
 
   create_table "models", force: :cascade do |t|
     t.string   "name",       null: false
+    t.integer  "make_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "models", ["make_id"], name: "index_models_on_make_id", using: :btree
 
   create_table "registrations", force: :cascade do |t|
     t.integer  "year",       null: false

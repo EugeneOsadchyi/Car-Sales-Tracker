@@ -25,8 +25,17 @@
 #
 
 class Car < ActiveRecord::Base
-  validates :mileage, presence: true, numericality: { only_integer: true }
-  validates :price, presence: true, numericality: { only_integer: true }
-  validates :year, presence: true, numericality: { only_integer: true }
-  validates :url, presence: true
+  belongs_to :model
+  belongs_to :color
+  belongs_to :body_style
+  belongs_to :condition
+  belongs_to :drive_train
+  belongs_to :fuel
+  belongs_to :location
+  belongs_to :registration
+  belongs_to :transmission
+  has_one    :description
+
+  accepts_nested_attributes_for :model
+
 end

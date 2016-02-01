@@ -9,7 +9,10 @@
 #
 
 class Model < ActiveRecord::Base
-  belongs_to :make
+  belongs_to :make, dependent: :destroy
+  has_many :cars
 
-  validates :name, presence: true
+  accepts_nested_attributes_for :make
+
+  validates :name, presence: true, uniqueness: true
 end

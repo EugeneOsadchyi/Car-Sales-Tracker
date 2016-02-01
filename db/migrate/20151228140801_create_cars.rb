@@ -3,15 +3,14 @@ class CreateCars < ActiveRecord::Migration
     create_table :cars do |t|
       t.integer :mileage, default: 0, null: false
       t.decimal :price, default: 0, null: false
-      t.integer :year, null: false
+      t.integer :year
       t.string :url, default: "", null: false
       t.datetime :date_added
 
 
-      t.belongs_to :make, index: true, null: false
+      t.belongs_to :model, index: true, null: false
       t.belongs_to :transmission, index: true, null: false
       t.belongs_to :condition, index: true, null: false
-      t.belongs_to :description, index: true
       t.belongs_to :drive_train, index: true, null: false
       t.belongs_to :body_style, index: true, null: false
       t.belongs_to :color, index: true, null: false
