@@ -5,13 +5,12 @@
 #  id                   :integer          not null, primary key
 #  mileage              :integer          default(0), not null
 #  price                :decimal(, )      default(0.0), not null
-#  year                 :integer          not null
+#  year                 :integer
 #  url                  :string           default(""), not null
 #  date_added           :datetime
-#  make_id              :integer          not null
+#  model_id             :integer          not null
 #  transmission_id      :integer          not null
 #  condition_id         :integer          not null
-#  description_id       :integer
 #  drive_train_id       :integer          not null
 #  body_style_id        :integer          not null
 #  color_id             :integer          not null
